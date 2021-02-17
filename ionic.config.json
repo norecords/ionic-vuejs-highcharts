@@ -1,0 +1,7 @@
+{
+  "name": "ionic-vuejs-highcharts",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
