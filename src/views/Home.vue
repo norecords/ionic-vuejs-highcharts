@@ -16,6 +16,7 @@
       <div id="container">
         <strong>Ready to create an app?</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <Highcharts :options="chartOptions" />
       </div>
     </ion-content>
   </ion-page>
@@ -24,6 +25,8 @@
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import Highcharts from 'highcharts';
+import { createHighcharts } from 'vue-highcharts';
 
 export default defineComponent({
   name: 'Home',
@@ -32,7 +35,33 @@ export default defineComponent({
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    Highcharts: createHighcharts('Highcharts', Highcharts)
+  },
+  ionViewWillEnter () {
+    let chartOptions = {
+      title: {
+          text: 'Server Stats'
+      },
+      subtitle: {
+          text: 'uptime'
+      },
+      xAxis: {
+          type: 'datetime'
+      },
+      yAxis: {
+          title: {
+          text: 'y title'
+          }
+      },
+      series: [{
+          name: 'uptime',
+          data: [{x: Date.now(), y: 0}],
+          yAxis: 0,
+          visible: true
+      }]
+    }
+    return chartOptions
   }
 });
 </script>
