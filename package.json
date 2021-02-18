@@ -15,8 +15,8 @@
     "@ionic/vue-router": "^5.4.0",
     "core-js": "^3.6.5",
     "highcharts": "^8.2.2",
+    "highcharts-vue": "https://github.com/dmitrystas/highcharts-vue/tarball/patch-1",
     "vue": "^3.0.0-0",
-    "vue-highcharts": "^0.2.0",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
